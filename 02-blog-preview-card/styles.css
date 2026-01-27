@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100dvh;
+    max-width: 1440px;
+    margin-inline: auto;
+    background-color: var(--color-yellow);
+    padding: 24px;
+}
+
+:root {
+    --font-general: "Figtree", sans-serif;
+    --color-yellow: #F4D04E;
+    --color-gris-claro: #6B6B6B;
+    --color-gris-oscuro: #111111;
+    --color-blanco: #FFFFFF;
+
+    --spacing-50: 4px;
+    --spacing-100: 8px;
+    --spacing-150: 12px;
+    --spacing-300: 24px;
+}
+
+.text-preset-1 {
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0px;
+    font-weight: 800;
+}
+
+.text-preset-2 {
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0px;
+    font-weight: 500;
+    color: var(--color-gris-claro);
+}
+
+.text-preset-3 {
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: 0;
+    font-weight: 500;
+}
+
+.text-preset-3-bold {
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: 0;
+    font-weight: 800;
+}
+
+
+.card-blog {
+    background-color: var(--color-blanco);
+    padding: 24px;
+    border-radius: 20px;
+    font-family: var(--font-general);
+    width: 100%;
+    max-width: 384px;
+    min-width: 280px;
+    border: 1px solid var(--color-gris-oscuro);
+    box-shadow: 7px 7px 1px var(--color-gris-oscuro);
+
+    .card-img {
+        border-radius: 10px;
+        width: 100%;
+        margin-bottom: var(--spacing-300);
+    }
+
+    .content-texts {
+        margin: var(--spacing-300) 0;
+
+        .tag {
+            background-color: var(--color-yellow);
+            width: fit-content;
+            padding: 4px 12px;
+            border-radius: 4px;
+            margin: var(--spacing-150) 0;
+        }
+
+        .date {
+            margin: var(--spacing-50) 0;
+        }
+
+        .lang {
+            margin: var(--spacing-150) 0;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+    }
+
+    .author {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin: var(--spacing-100) 0;
+
+        .avatar-author {
+            width: 32px;
+            height: auto;
+        }
+    }
+}
+
+.card-blog:hover .lang {
+    color: #F4D04E;
+}
+
+.attribution {
+    font-size: 15px;
+    text-align: center;
+    font-family: var(--font-general);
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+.attribution a:hover {
+    text-decoration: none;
+}
