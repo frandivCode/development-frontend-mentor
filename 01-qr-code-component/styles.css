@@ -49,17 +49,22 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     min-height: 100vh;
 }
 
 .attribution {
-    font-size: 11px;
+    font-size: 15px;
     text-align: center;
+    font-family: var(--font-general);
 }
 
 .attribution a {
     color: hsl(228, 45%, 44%);
+}
+
+.attribution a:hover {
+    text-decoration: none;
 }
 
 .card-qr {
