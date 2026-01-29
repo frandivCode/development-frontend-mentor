@@ -22,7 +22,6 @@
         padding: 40px 20px;
     }
 
-    /* --- 2. Estructura Principal --- */
     .container {
         width: 100%;
         max-width: 900px;
@@ -91,12 +90,6 @@
         background-color: #FFF0E6;
         color: #FF5722;
     }
-
-    .tag.new {
-        background-color: #E6F6FF;
-        color: var(--accent);
-    }
-
 
     h2 {
         font-size: 1.25rem;

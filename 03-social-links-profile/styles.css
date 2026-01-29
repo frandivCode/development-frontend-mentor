@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a:visited,
+:link {
+    color: var(--green-color);
+}
+
+a {
+    text-decoration: none;
+}
+
+:root {
+    /* Font */
+    --font-general: "Inter",
+        sans-serif;
+    /* Colors */
+    --green-color: hsl(75, 94%, 57%);
+    --white-color: hsl(0, 0%, 100%);
+    --grey-700: hsl(0, 0%, 20%);
+    --grey-800: hsl(0, 0%, 12%);
+    --grey-900: hsl(0, 0%, 8%);
+    /* FontSizes */
+    --font-size: 14px;
+    --font-weight-400: 200;
+    --font-weight-600: 600;
+    --font-weight-700: 700;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+
+body {
+    min-height: 100dvh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    font-family: var(--font-general);
+    font-size: var(--font-size);
+    background-color: var(--grey-900);
+    color: var(--white-color);
+}
+
+.card-social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--grey-800);
+    padding: 32px;
+    text-align: center;
+    border-radius: 12px;
+    width: 320px;
+
+    .img-avatar {
+        border-radius: 50%;
+        width: 80px;
+        margin-bottom: 32px;
+    }
+
+    .content-text {
+        h2 {
+            margin-bottom: 8px;
+            font-weight: var(--font-weight-600);
+        }
+
+        span {
+            color: var(--green-color);
+            font-weight: var(--font-weight-600);
+            font-size: 12px;
+        }
+
+        p {
+            font-weight: var(--font-weight-400);
+            margin-top: 24px;
+            font-size: 12px;
+        }
+    }
+
+    .social-links {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        width: 100%;
+        margin-top: 24px;
+
+        a {
+            background: var(--grey-700);
+            max-width: 100%;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: var(--font-weight-600);
+            font-size: 12px;
+            letter-spacing: 0.2px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        a:hover {
+            background: var(--green-color);
+            color: var(--grey-900);
+        }
+    }
+}
