@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    /* Primary */
+    --green-500: #3c8067;
+    --green-700: #1b4133;
+
+    /* Neutral */
+    --black-color: #1c232b;
+    --grey-color: #6c7289;
+    --cream-color: #f2ebe3;
+    --white-color: #ffffff;
+
+    /* Fonts */
+    --montserrat-font: "Montserrat", sans-serif;
+    --fraunces-font: "Fraunces", serif;
+
+    /* Weights  */
+    --font-wg-700: 700;
+    --font-wg-500: 500;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 14px;
+    line-height: 1.6;
+    background: var(--cream-color);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.page {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr auto;
+
+    .card__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px 16px;
+
+        .card__product {
+            display: grid;
+            max-width: 600px;
+            width: 100%;
+            background-color: var(--white-color);
+            border-radius: 12px;
+            overflow: hidden;
+
+            .card__media {
+                width: 100%;
+
+                .card__img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .card__content {
+                display: grid;
+                gap: 12px;
+                padding: 24px;
+
+                .card__tag {
+                    font-family: var(--montserrat-font);
+                    color: var(--grey-color);
+                    text-transform: uppercase;
+                    letter-spacing: 0.35em;
+                    font-size: 0.75rem;
+                    font-weight: var(--font-wg-500);
+                }
+
+                .card__title {
+                    font-family: var(--fraunces-font);
+                    line-height: 100%;
+                    font-size: 2rem;
+                    font-weight: var(--font-wg-700);
+                    color: var(--black-color);
+                }
+
+                .card__description {
+                    color: var(--grey-color);
+                    font-family: var(--montserrat-font);
+                    font-weight: var(--font-wg-500);
+                    line-height: 1.65;
+                }
+
+                .card__prices {
+                    display: flex;
+                    align-items: center;
+                    width: 100%;
+                    margin-top: 6px;
+                    gap: 16px;
+
+                    .card__price-new {
+                        font-size: 2rem;
+                        font-weight: var(--font-wg-700);
+                        color: var(--green-500);
+                        line-height: 1;
+                        font-family: var(--fraunces-font);
+                    }
+
+                    s {
+                        color: var(--grey-color);
+                        font-size: 0.813rem;
+                        font-family: var(--montserrat-font);
+                    }
+                }
+
+                .card__btn {
+                    margin-top: 6px;
+                    background: var(--green-500);
+                    outline: none;
+                    border: none;
+                    border-radius: 10px;
+                    width: 100%;
+                    padding: 14px 16px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    gap: 10px;
+                    transition: background 0.3s ease;
+
+                    &:last-child {
+                        color: var(--white-color);
+                        font-weight: var(--font-wg-700);
+                    }
+
+                    &:hover {
+                        background: var(--green-700);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width:40.063rem) {
+    .card__content {
+        padding: 32px;
+        gap: 16px;
+    }
+
+    .card__product {
+        grid-template-columns: 1fr 1fr;
+    }
+}
