@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+body {
+    font-size: 15px;
+    font-family: var(--font-general);
+    background-color: #FAFAFA;
+}
+
+:root {
+    /* Font */
+    --font-general: "Poppins", sans-serif;
+    -font-200: 200;
+    --font-400: 400;
+    --font-600: 600;
+    /* Primary */
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
+    /* Neutral */
+    --grey-400: hsl(212, 6%, 44%);
+    --grey-500: hsl(234, 12%, 34%);
+    --white: hsl(0, 0%, 100%);
+}
+
+/* Styles for the Structure */
+
+.page {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    padding: clamp(60px, 5vw, 72px) 32px clamp(40px, 3vw, 60px);
+
+    .hero {
+        display: grid;
+        place-items: center;
+        width: 100%;
+        text-align: center;
+        gap: 12px;
+        margin-block-end: 3.75rem;
+
+        .hero__title {
+            font-size: clamp(24px, 2.5vw, 34.5px);
+            max-width: 500px;
+            font-weight: 200;
+            color: var(--grey-400);
+            line-height: 1.5;
+            width: fit-content;
+
+            .hero__focus {
+                display: block;
+                font-size: clamp(24px, 2.7vw, 34px);
+                color: var(--grey-500);
+                font-weight: var(--font-600);
+            }
+        }
+
+        .hero__desc {
+            color: var(--grey-500);
+            max-width: 500px;
+            line-height: 1.3;
+        }
+    }
+
+    .features {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, auto);
+        width: min(1100px, 100%);
+        gap: 28px;
+
+        .card__feature {
+            background: var(--white);
+            box-shadow: 0px 12px 24px rgba(0, 60, 255, 0.15);
+            padding: 28px 32px 44px 32px;
+            border-radius: 6px;
+            border-top: 4px solid transparent;
+
+            .card__title {
+                color: var(--grey-500);
+                font-weight: var(--font-600);
+                font-size: 1.25rem;
+                margin-bottom: 6px;
+            }
+
+            .card__desc {
+                color: var(--grey-400);
+                line-height: 1.6;
+                font-size: 0.813rem;
+                max-width: 34ch;
+                margin: 0;
+            }
+
+            .card__icon {
+                justify-self: end;
+                width: 56px;
+                height: 56px;
+                margin-top: 24px;
+            }
+        }
+
+        .card-red {
+            border-top-color: var(--red);
+            grid-column: 2 / 3;
+            grid-row: 1 / span 2;
+            overflow: hidden;
+        }
+
+        .card-cyan {
+            border-top-color: var(--cyan);
+            grid-row: 2 / span 2;
+            grid-column: 1;
+            overflow: hidden;
+        }
+
+        .card-orange {
+            border-top-color: var(--orange);
+            grid-row: 3 / span 2;
+            grid-column: 2;
+            overflow: hidden;
+        }
+
+        .card-blue {
+            border-top-color: var(--blue);
+            grid-row: 2 / span 2;
+            grid-column: 3;
+            overflow: hidden;
+        }
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .page {
+        .hero {
+            .hero__desc {
+                max-width: 300px;
+            }
+        }
+
+        .features {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            place-items: stretch;
+
+            .card-red,
+            .card-cyan,
+            .card-orange,
+            .card-blue {
+                grid-column: inherit;
+                grid-row: inherit;
+            }
+
+            .card-cyan {
+                order: -1;
+            }
+        }
+    }
+}
