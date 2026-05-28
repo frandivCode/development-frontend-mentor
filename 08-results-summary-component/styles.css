@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    /* Colores primarios */
+    --color-red-light: hsl(0, 100%, 67%);
+    --color-orangey-yellow: hsl(39, 100%, 56%);
+    --color-green-teal: hsl(166, 100%, 37%);
+    --color-cobalt-blue: hsl(234, 85%, 45%);
+
+    /* Gradientes */
+    --bg-slate-blue: hsl(252, 100%, 67%);
+    --bg-royal-blue: hsl(241, 81%, 54%);
+
+    --bg-violet-blue: hsla(256, 72%, 46%, 1);
+    --bg-persian-blue: hsla(241, 72%, 46%, 0);
+
+    /* Colores neutrales */
+    --color-white: hsl(0, 0%, 100%);
+    --color-pale-blue: #ebf1ff;
+    --color-light-lavender: #c8c7ff;
+    --color-dark-gray-blue: hsl(224, 30%, 27%);
+
+    /* Body Font */
+    --fs-18: 18px;
+
+    /* Font */
+    --ff-hanken-grotesk: "Hanken Grotesk", sans-serif;
+    --fw-500: 500;
+    --fw-700: 700;
+    --fw-800: 800;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--color-pale-blue);
+    display: grid;
+    place-content: center;
+    font-family: var(--ff-hanken-grotesk);
+    font-size: var(--fs-18);
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 736px;
+    width: 100%;
+    background-color: var(--color-white);
+    border-radius: 32px;
+
+    .result-panel,
+    .summary-panel {
+        padding: 2.5rem;
+        border-radius: 32px;
+    }
+
+    .summary-title {
+        font-size: 1.3rem;
+    }
+
+    .result {
+        margin-bottom: 32px;
+        opacity: 0.8;
+        color: var(--color-pale-blue);
+        font-weight: var(--fw-500);
+    }
+
+    .summary-panel {
+        background-color: var(--color-white);
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: space-between;
+
+        .continue-btn {
+            background: var(--color-dark-gray-blue);
+            color: var(--color-white);
+            border-radius: 50px;
+            padding: 16px;
+            width: 100%;
+            font-weight: var(--fw-500);
+            font-size: 16px;
+            cursor: pointer;
+            outline: none;
+            border: none;
+        }
+
+        .continue-btn:hover {
+            background: linear-gradient(to bottom, var(--bg-slate-blue), var(--bg-royal-blue));
+        }
+
+        .summary-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .summary-item {
+            width: 100%;
+            display: flex;
+            align-items: start;
+            justify-content: space-between;
+            padding: 14px;
+            border-radius: 8px;
+
+            .item-left {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                .category {
+                    font-size: 16px;
+                    font-weight: var(--fw-500);
+                }
+            }
+
+            .score {
+                display: flex;
+                gap: 10px;
+                font-size: 16px;
+
+                .score-number {
+                    color: var(--color-dark-gray-blue);
+                    font-weight: var(--fw-800);
+                }
+
+                .score-total {
+                    color: gray;
+                }
+            }
+        }
+    }
+
+    /* Ejemplo exacto para Reaction */
+    .summary-item.reaction {
+        background-color: hsla(0, 100%, 67%, 0.1);
+    }
+
+    .summary-item.reaction .category {
+        color: var(--color-red-light);
+    }
+
+    .summary-item.memory {
+        background-color: hsla(39, 100%, 56%, 0.1);
+    }
+
+    .summary-item.memory .category {
+        color: var(--color-orangey-yellow);
+    }
+
+    .summary-item.verbal {
+        background-color: hsl(166, 100%, 37%, 0.1);
+    }
+
+    .summary-item.verbal .category {
+        color: var(--color-green-teal);
+    }
+
+    .summary-item.visual {
+        background-color: hsl(234, 85%, 45%, 0.1);
+    }
+
+    .summary-item.visual .category {
+        color: var(--color-cobalt-blue);
+    }
+
+    .result-panel {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        text-align: center;
+        background: linear-gradient(to bottom, var(--bg-slate-blue)-10%, var(--bg-royal-blue)80%);
+
+
+        .score-circle {
+            width: 180px;
+            aspect-ratio: 1 / 1;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to bottom, var(--bg-violet-blue), hsl(241deg 81% 54% / 35%), var(--bg-persian-blue));
+
+            h1 {
+                color: var(--color-pale-blue);
+                font-size: 60px;
+                letter-spacing: 1.2px;
+            }
+
+            span {
+                color: var(--color-pale-blue);
+                opacity: 0.4;
+                font-weight: var(--fw-500);
+                font-size: 16px;
+            }
+        }
+
+        .result-description {
+            color: var(--color-pale-blue);
+
+            h2 {
+                margin: 24px 0 16px 0;
+            }
+
+            p {
+                font-size: 16px;
+                max-width: clamp(280px, 4.5vw, 225px);
+                font-weight: 300;
+                opacity: 0.8;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        display: flex;
+    }
+
+    .card-container {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+
+        .result-panel {
+            border-radius: 0 0 32px 32px;
+
+            .score-circle {
+                width: 150px;
+            }
+
+            .result-description {
+
+                h2 {
+                    margin: 14px 0 12px 0;
+                }
+            }
+        }
+
+        .summary-panel {
+            padding: 1.5rem;
+
+            .summary-container {
+                margin: 24px 0;
+            }
+        }
+
+    }
+}
