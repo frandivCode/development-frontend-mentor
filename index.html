@@ -83,13 +83,23 @@
                 <p class="description">Sección de resumen de resultados. Mi octavo reto completado de Frontend
                     Mentor.</p>
             </a>
+            <a href="./09-nft-preview-card/index.html" class="project-card">
+                <div class="card-header">
+                    <span class="tag html">HTML & CSS</span>
+                </div>
+                <h2>09. NFT Card</h2>
+                <p class="description">Card de NFT. Mi noveno reto completado de Frontend
+                    Mentor.</p>
+            </a>
         </main>
 
         <footer>
-            Coded by Francisco Zapata | 2026
+            <p>&copy; <span id="anio"></span> Code by Francisco Zapata</p>
         </footer>
     </div>
-
+    <script>
+        document.getElementById("anio").textContent = new Date().getFullYear();
+    </script>
 </body>
 
 </html>
