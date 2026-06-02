@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&family=Lexend+Deca:wght@100..900&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+img,
+picture,
+svg,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+:root {
+    /* Colors */
+    --gold: hsl(31, 77%, 52%);
+    --cyan: hsl(184, 100%, 22%);
+    --green: hsl(179, 100%, 13%);
+    /* (paragraphs) */
+    --transparent: hsla(0, 0%, 100%, 0.75);
+    /* (background, headings, buttons) */
+    --gray: hsl(0, 0%, 95%);
+
+    /* Typography */
+    --fs-general: .9375rem;
+    --ff-lexend: "Lexend Deca", sans-serif;
+    --ff-shoulders: "Big Shoulders", sans-serif;
+    --fw-400: 400;
+    --fw-700: 700;
+}
+
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    display: grid;
+    place-items: center;
+    padding: clamp(4rem, 3.64rem + 1.82vw, 5rem) clamp(1.5rem, 1.14rem + 1.82vw, 2.5rem);
+    background-color: var(--gray);
+    font-size: var(--fs-general);
+}
+
+.card-sedan {
+    --card-color: hsl(31, 77%, 52%);
+    background-color: var(--card-color);
+}
+
+.card-suv {
+    --card-color: hsl(184, 100%, 22%);
+    background-color: var(--card-color);
+}
+
+.card-luxury {
+    --card-color: hsl(179, 100%, 13%);
+    background-color: var(--card-color);
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-radius: .5rem;
+    overflow: hidden;
+}
+
+.card-column {
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+    align-items: flex-start;
+    padding: clamp(2.5rem, 2.32rem + 0.91vw, 3rem);
+}
+
+.img-card {
+    margin-bottom: clamp(1rem, 0.648rem + 1.5vw, 2rem);
+}
+
+.title-card {
+    text-transform: uppercase;
+    color: var(--gray);
+    font-family: var(--ff-shoulders);
+    font-size: clamp(1.5rem, 1.148rem + 1.5vw, 3rem);
+    font-weight: var(--fw-700);
+    text-align: start;
+    margin-bottom: clamp(1rem, 0.736rem + 1.13vw, 1.5rem);
+}
+
+.description-card {
+    text-align: start;
+    font-weight: var(--fw-400);
+    font-family: var(--ff-lexend);
+    color: var(--transparent);
+    line-height: 1.6;
+    font-size: 1rem;
+    max-width: 23ch;
+    margin-bottom: clamp(2rem, 1.296rem + 3vw, 4rem);
+}
+
+.btn-card {
+    font-family: var(--ff-lexend);
+    background-color: var(--gray);
+    color: var(--card-color);
+    border: .125rem solid transparent;
+    cursor: pointer;
+    padding: clamp(0.875rem, 0.831rem + 0.19vw, 1rem) clamp(1rem, 0.648rem + 1.5vw, 2rem);
+    border-radius: 3.125rem;
+}
+
+.btn-card:hover {
+    background-color: transparent;
+    color: var(--gray);
+    border: .125rem solid white;
+}
+
+@media screen and (max-width:48rem) {
+
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+
+    body {
+        place-items: none;
+    }
+
+    .description-card {
+        max-width: none;
+    }
+}
