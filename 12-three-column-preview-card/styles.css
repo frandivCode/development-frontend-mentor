@@ -72,6 +72,18 @@ body {
     font-size: var(--fs-general);
 }
 
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
 .card-sedan {
     --card-color: hsl(31, 77%, 52%);
     background-color: var(--card-color);
@@ -97,7 +109,7 @@ body {
 .card-column {
     display: flex;
     flex-direction: column;
-    margin-top: auto;
+    margin-block-start: auto;
     align-items: flex-start;
     padding: clamp(2.5rem, 2.32rem + 0.91vw, 3rem);
 }
@@ -122,7 +134,7 @@ body {
     font-family: var(--ff-lexend);
     color: var(--transparent);
     line-height: 1.6;
-    font-size: 1rem;
+    font-size: clamp(0.875rem, 0.831rem + 0.19vw, 1rem);
     max-width: 23ch;
     margin-bottom: clamp(2rem, 1.296rem + 3vw, 4rem);
 }
@@ -150,7 +162,7 @@ body {
     }
 
     body {
-        place-items: none;
+        place-items: normal;
     }
 
     .description-card {
