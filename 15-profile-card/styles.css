@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght,YOPQ@100..900,300&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1.5;
+    text-rendering: optimizeLegibility;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+p,
+li {
+    text-wrap: pretty;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+    text-wrap: balance;
+}
+
+
+:root {
+    /* Colors */
+    --blue-600: hsl(185, 75%, 39%);
+    --navy-950: hsl(229, 23%, 23%);
+    --gray-500: hsl(227, 10%, 46%);
+    --gray-100: hsl(225, 10%, 92%);
+    --white: hsl(0, 0%, 100%);
+
+    /* Fonts */
+    --fs-body: 1.125rem;
+    --fw-400: 400;
+    --fw-700: 700;
+    --ff-Kumbh: "Kumbh Sans", sans-serif;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100dvh;
+    background-color: var(--blue-600);
+    background-image: url(./images/bg-pattern-top.svg), url(./images/bg-pattern-bottom.svg);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -35% 200%, 126% -150%;
+    display: grid;
+    place-items: center;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0 clamp(1.5rem, 0.486rem + 1.13vw, 3rem);
+}
+
+.card {
+    font-family: var(--ff-Kumbh);
+    background-color: var(--white);
+    width: 100%;
+    max-width: 21.875rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 20px 40px 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.card__header {
+    background-image: url(./images/bg-pattern-card.svg);
+    height: 8.75rem;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+.card__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: clamp(1rem, 0.824rem + 0.75vw, 1.5rem);
+}
+
+.card__avatar {
+    border-radius: 100%;
+    margin-top: -3.5rem;
+    border: 5px solid var(--white);
+}
+
+.card__age {
+    font-weight: var(--fw-400);
+    color: var(--gray-500);
+}
+
+.card__location {
+    color: var(--gray-500);
+}
+
+.card__title {
+    margin-bottom: .5rem;
+}
+
+.card__title,
+.card__stat-number {
+    color: var(--navy-950);
+    font-size: var(--fs-body);
+    font-weight: var(--fw-700);
+}
+
+.card__stats {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1.5rem 0;
+    border-top: .0625rem solid var(--gray-100);
+}
+
+.card__stat-label {
+    font-size: .75rem;
+    color: var(--gray-500);
+    letter-spacing: .075rem;
+}
+
+@media (max-width: 768px) {
+    body {
+        background-position: right 50vw bottom 40vh, left 50vw top 50vh;
+    }
+}
