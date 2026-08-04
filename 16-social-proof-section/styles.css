@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1.5;
+    text-rendering: optimizeLegibility;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+/* p,
+li {
+    text-wrap: pretty;
+} */
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+:root {
+    /* Colors Primary */
+    --very-dark-magenta: hsl(300, 43%, 22%);
+    --soft-pink: hsl(333, 80%, 67%);
+
+    /* Colors Neutral */
+    --dark-grayish-magenta: hsl(303, 10%, 53%);
+    --light-grayish-magenta: hsl(300, 24%, 96%);
+    --white: hsl(0, 0%, 100%);
+
+    /* Typography */
+    --ff-spartan: "League Spartan", sans-serif;
+    --fs-general: .9375rem;
+    --fw-400: 400;
+    --fw-500: 500;
+    --fw-700: 700;
+    --fs-title: clamp(2.188rem, 1.725rem + 1.97vw, 3.5rem);
+    --fs-intro: clamp(1rem, 0.956rem + 0.19vw, 1.125rem);
+    --fs-base: clamp(1rem, 0.965rem + 0.15vw, 1.1rem);
+    --spacing-xl: clamp(2rem, 1.296rem + 3vw, 4rem);
+    --spacing-md: clamp(1rem, 0.868rem + 0.56vw, 1.375rem);
+    --padding-card: clamp(1.5rem, 1.2rem + 1.5vw, 2.5rem);
+}
+
+/* Mobile First */
+body {
+    min-height: 100dvh;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    font-family: var(--ff-spartan);
+    background-image: url(./images/bg-pattern-top-mobile.svg), url(./images/bg-pattern-bottom-mobile.svg);
+    background-repeat: no-repeat, no-repeat;
+    background-position: 0 -12.5%, 0% 22cm;
+}
+
+/* Introduccion */
+.social-proof {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1300px;
+    padding-inline: clamp(1.5rem, 0.972rem + 2.25vw, 3rem);
+    padding-block: clamp(2.5rem, 1.62rem + 3.76vw, 5rem);
+}
+
+.social-proof__intro {
+    display: flex;
+    align-items: center;
+    flex-flow: column wrap;
+    gap: clamp(1rem, 0.648rem + 1.5vw, 2rem);
+}
+
+.social-proof__title {
+    font-size: var(--fs-title);
+    font-weight: var(--fw-700);
+    color: var(--very-dark-magenta);
+    letter-spacing: -1px;
+    line-height: 0.9;
+    max-width: clamp(17.5rem, 14.243rem + 13.9vw, 26.75rem);
+}
+
+.social-proof__desc {
+    color: var(--dark-grayish-magenta);
+    line-height: 1.2;
+    font-size: var(--fs-intro);
+    max-width: clamp(18.75rem, 14.128rem + 19.72vw, 26.75rem);
+}
+
+/* Rating */
+.social-proof__ratings {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    margin-block: var(--spacing-xl);
+}
+
+.rating {
+    background-color: var(--light-grayish-magenta);
+    padding: clamp(1rem, 0.93rem + 0.3vw, 1.2rem);
+    border-radius: 8px;
+}
+
+.rating__stars {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .3125rem;
+    margin-bottom: .5rem;
+
+    img {
+        width: clamp(0.938rem, 0.871rem + 0.28vw, 1.125rem);
+    }
+}
+
+.rating__text {
+    font-size: var(--fs-base);
+    font-weight: var(--fw-700);
+    color: var(--very-dark-magenta);
+}
+
+/* Testimonios */
+.testimonial-list {
+    display: flex;
+    flex-flow: column wrap;
+    gap: var(--spacing-md);
+}
+
+.card {
+    background-color: var(--very-dark-magenta);
+    padding: var(--padding-card);
+    border-radius: 0.5rem;
+    text-align: start;
+}
+
+.card__header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    width: 100%;
+    margin-block-end: 1rem;
+}
+
+.card__avatar {
+    border-radius: 100%;
+    width: 2.5rem;
+}
+
+.card__name {
+    font-size: var(--fs-base);
+    color: var(--white);
+    font-weight: var(--fw-500);
+}
+
+.card__status {
+    font-size: var(--fs-base);
+    color: var(--soft-pink);
+    letter-spacing: 1px;
+}
+
+.card__quote {
+    color: var(--light-grayish-magenta);
+}
+
+@media (min-width: 48rem) {
+    body {
+        background-image: url('./images/bg-pattern-top-desktop.svg'), url('./images/bg-pattern-bottom-desktop.svg');
+        background-position: 0% 0%, 100% 200%;
+    }
+}
+
+@media (min-width: 64rem) {
+
+    .social-proof__intro {
+        text-align: start;
+        width: 50%;
+        padding-inline-end: 2rem;
+        align-items: start;
+    }
+
+    .social-proof__header {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        margin-block-end: var(--spacing-xl);
+    }
+
+    .social-proof__ratings {
+        width: 50%;
+        margin: 0;
+    }
+
+    .social-proof__ratings .rating:nth-child(1) {
+        align-self: flex-start;
+    }
+
+    .social-proof__ratings .rating:nth-child(2) {
+        align-self: center;
+    }
+
+    .social-proof__ratings .rating:nth-child(3) {
+        align-self: flex-end;
+    }
+
+    .rating {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 80%;
+    }
+
+    .rating__stars {
+        margin: 0;
+    }
+
+    .testimonial-list {
+        align-items: center;
+        flex-flow: nowrap;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .testimonial-list .testimonial-list__item:nth-child(2) {
+        margin-block-start: 2rem;
+    }
+
+    .testimonial-list .testimonial-list__item:nth-child(3) {
+        margin-block-start: 4rem;
+    }
+}
