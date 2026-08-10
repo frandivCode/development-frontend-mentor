@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+}
+
+p,
+li {
+    text-wrap: pretty;
+}
+
+:root {
+    /* Colors */
+    --color-purple-100: hsl(254, 88%, 90%);
+    --color-purple-500: hsl(256, 67%, 59%);
+    --color-yellow-100: hsl(31, 66%, 93%);
+    --color-yellow-500: hsl(39, 100%, 71%);
+    --color-white: hsl(0, 0%, 100%);
+    --color-black: hsl(0, 0%, 7%);
+
+    /* Fonts */
+    --fs-general: 1.125rem;
+    --fw-400: 400;
+    --fw-500: 500;
+    --ff-sans: "DM Sans", sans-serif;
+    --fs-h1: clamp(2rem, 1.30rem + 3vw, 4rem);
+    --fs-h2: clamp(1.5rem, 1.148rem + 1.5vw, 2.5rem);
+    --fs-h2-x2: clamp(1.5rem, 1.148rem + 1.5vw, 2rem);
+    --fs-p: clamp(1rem, 0.96rem + 0.19vw, 1.125rem);
+}
+
+body {
+    font-family: var(--ff-sans);
+    font-size: var(--fs-general);
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+    padding: clamp(2rem, 5vw, 5rem);
+    background-color: hsl(0, 0%, 96%);
+}
+
+.bento {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-inline: auto;
+    gap: 2rem;
+    grid-template-areas:
+        "create hero      hero       schedule"
+        "create platforms consistent schedule"
+        "ai     audience  grow       grow";
+}
+
+/* Card Hero */
+.bento__card--hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--color-purple-500);
+    grid-area: hero;
+    color: var(--color-white);
+    text-align: center;
+    padding: clamp(2rem, 0.94rem + 4.51vw, 4rem) clamp(1.5rem, 0.97rem + 2.25vw, 3rem);
+}
+
+.bento__card--hero .bento__image {
+    max-width: 12.5rem;
+    margin: .625rem auto;
+}
+
+.bento__title--hero {
+    font-size: var(--fs-h1);
+    line-height: 0.9;
+    font-weight: var(--fw-500);
+    margin-bottom: 1rem;
+    max-width: 16ch;
+    margin-inline: auto;
+}
+
+.bento__title--hero>span {
+    color: var(--color-yellow-500);
+}
+
+.bento__title--hero .faster {
+    font-style: italic;
+    color: inherit;
+
+}
+
+.bento__card--hero .bento__text {
+    font-weight: var(--fw-400);
+}
+
+/* ===== End Card Hero ===== */
+
+/* Card Platforms */
+.bento__card--platforms {
+    background-color: var(--color-white);
+    grid-area: platforms;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    padding: clamp(1rem, 0.824rem + 0.75vw, 1.5rem);
+    gap: 1rem;
+}
+
+.bento__card--platforms .bento__image {
+    max-width: 21.5rem;
+    box-shadow: -12px 12px 20px #F8F5F9;
+}
+
+.bento__card--platforms .bento__title {
+    font-size: var(--fs-h2-x2);
+    line-height: 0.9;
+    font-weight: var(--fw-500);
+    letter-spacing: -0.1187rem;
+    max-width: 11.25rem;
+}
+
+/* ===== End Card Platforms ===== */
+
+/* Card Consistent */
+.bento__card--consistent {
+    background-color: var(--color-yellow-500);
+    grid-area: consistent;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: clamp(1rem, 0.824rem + 0.75vw, 1.5rem);
+    padding-bottom: 0;
+    overflow: hidden;
+    gap: 1rem;
+}
+
+.bento__card--consistent .bento__title {
+    font-size: var(--fs-h2-x2);
+    line-height: 0.9;
+    font-weight: var(--fw-500);
+    letter-spacing: -0.1187rem;
+    max-width: 11.25rem;
+}
+
+.bento__card--consistent .bento__image {
+    max-width: 21.5rem;
+    margin-top: auto;
+    width: 100%;
+    height: 6rem;
+    object-fit: cover;
+    object-position: top;
+}
+
+/* ===== End Card Consistent ===== */
+
+/* Card Schedule */
+.bento__card--schedule {
+    background-color: var(--color-purple-100);
+    grid-area: schedule;
+    display: flex;
+    flex-direction: column;
+    padding: clamp(1rem, 0.81rem + 1.88vw, 2rem);
+    padding-right: 0;
+    align-items: start;
+    gap: 1.2rem;
+}
+
+.bento__card--schedule .bento__title {
+    font-size: var(--fs-h2-x2);
+    line-height: 0.9;
+    font-weight: var(--fw-500);
+    letter-spacing: -0.1187rem;
+    max-width: 11.25rem;
+}
+
+.bento__card--schedule .bento__image {
+    max-width: 23.75rem;
+}
+
+.bento__card--schedule .bento__text {
+    font-weight: var(--fw-500);
+    line-height: 1.2;
+}
+
+/* ===== End Card Schedule ===== */
+
+/* Card Grow */
+.bento__card--grow {
+    background-color: var(--color-purple-500);
+    grid-area: grow;
+    display: flex;
+    align-items: center;
+    padding: clamp(1rem, 0.648rem + 1.5vw, 2rem);
+}
+
+.bento__card--grow .bento__title {
+    font-size: var(--fs-h2);
+    line-height: 0.9;
+    letter-spacing: -0.1187rem;
+    font-weight: var(--fw-500);
+    color: var(--color-white);
+}
+
+.bento__card--grow .bento__image {
+    max-width: 18.75rem;
+}
+
+/* ===== End Card Grow ===== */
+/* Card Audience */
+.bento__card--audience {
+    background-color: var(--color-white);
+    grid-area: audience;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    padding: clamp(1rem, 0.824rem + 0.75vw, 1.5rem);
+}
+
+.bento__card--audience .bento__title {
+    font-size: var(--fs-h1);
+    font-weight: var(--fw-500);
+}
+
+.bento__card--audience .bento__highlight {
+    margin-bottom: clamp(1rem, 0.648rem + 1.5vw, 2rem);
+    font-weight: var(--fw-500);
+}
+
+.bento__card--audience .bento__image {
+    max-width: 11.5625rem;
+}
+
+/* ===== End Card Audience ===== */
+
+/* Card Create */
+.bento__card--create {
+    background-color: var(--color-yellow-100);
+    grid-area: create;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(1rem, 0.648rem + 1.5vw, 2rem);
+}
+
+.bento__card--create .bento__title {
+    font-size: var(--fs-h2);
+    line-height: 0.9;
+    letter-spacing: -0.1187rem;
+    font-weight: var(--fw-500);
+    margin-bottom: 1rem;
+}
+
+.bento__highlight--purple {
+    color: var(--color-purple-500);
+    font-style: italic;
+}
+
+/* ===== End Card Create ===== */
+
+/* Card IA */
+.bento__card--ai {
+    background-color: var(--color-yellow-500);
+    grid-area: ai;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: clamp(1rem, 0.824rem + 0.75vw, 1.5rem);
+}
+
+.bento__card--ai .bento__title {
+    font-size: var(--fs-h2);
+    line-height: 0.9;
+    letter-spacing: -0.1187rem;
+    font-weight: var(--fw-500);
+
+}
+
+/* ===== End Card IA ===== */
+.bento__card {
+    border-radius: .625rem;
+    overflow: hidden;
+}
