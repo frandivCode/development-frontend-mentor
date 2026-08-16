@@ -1,0 +1,413 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+p,
+li {
+    text-wrap: pretty;
+}
+
+:root {
+    /* Colors Primary */
+    --purple-300: hsl(276, 100%, 81%);
+    --bg-bubble: hsl(275, 33%, 93%);
+    --purple-600: hsl(276, 55%, 52%);
+    --gray-500: hsl(270, 7%, 64%);
+    --gray-300: hsl(206, 6%, 79%);
+    --purple-950: hsl(271, 36%, 24%);
+
+    /* Colors Gradients */
+    --pink-500: hsl(293, 100%, 63%);
+    --purple-500: hsl(264, 100%, 61%);
+
+    /* Colors Secondary */
+    --white: hsl(0, 100%, 100%);
+    --gray-100: hsl(270, 20%, 96%);
+    --purple-950: hsl(271, 36%, 24%);
+    --pink-400: hsl(289, 100%, 72%);
+
+    /* Typography */
+    --ff-rubik: "Rubik", sans-serif;
+    --fs-body: 1rem;
+    --fw-400: 400;
+    --fw-500: 500;
+    --fw-700: 700;
+    --fs-hero-title: 2.5rem;
+    --fs-hero-desc: 1.2rem;
+    --fs-app-name: .875rem;
+    --fs-app-status: .6875rem;
+    --fs-app-msg: .6875rem;
+    --fs-app-price: 1rem;
+
+    /* Spacings */
+    --gap-section: 4rem;
+    --gap-hero-text: 1.5rem;
+    --pad-phone: 0.6rem;
+    --pad-bubble: .625rem;
+    --gap-msg-small: 0.5rem;
+    --gap-msg-large: 1rem;
+
+    /* Borders */
+    --radius-phone: 2.5rem;
+    --radius-bubble: .75rem;
+    --radius-tail: .25rem;
+    --radius-input: 2rem;
+
+    /* Shadows */
+    --shadow-phone: 10px 10px 40px rgba(0, 0, 0, 0.2);
+    --shadow-msg: 0px 10px 10px rgba(0, 0, 0, 0.05);
+}
+
+body {
+    line-height: 1.5;
+    font-size: var(--fs-body);
+    font-family: var(--ff-rubik);
+    background-color: hsl(0, 0%, 98%);
+    position: relative;
+}
+
+body::before {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: -4.0625rem;
+    background: linear-gradient(to bottom, var(--pink-500), var(--purple-500));
+    border-radius: 0 0 50rem 0;
+    width: 25rem;
+    height: 50rem;
+    z-index: -1;
+}
+
+body::after {
+    position: absolute;
+    content: '';
+    right: 0;
+    bottom: -4.0625rem;
+    background: linear-gradient(to top, var(--gray-100));
+    border-radius: 50rem 0 0 0;
+    width: 25rem;
+    height: 50rem;
+    z-index: -1;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: var(--gap-section) 0;
+    gap: 10rem;
+}
+
+.phone {
+    width: 100%;
+    max-width: 21.875rem;
+    border: .9375rem solid var(--white);
+    border-radius: var(--radius-phone);
+    box-shadow: var(--shadow-phone);
+    overflow: hidden;
+}
+
+.phone__inner {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--gray-100);
+}
+
+.phone__inner::before {
+    content: '';
+    position: absolute;
+    width: 11.25rem;
+    top: 0;
+    left: 4.375rem;
+    padding: .8125rem;
+    background-color: var(--white);
+    border-radius: 0 0 1.5625rem 1.5625rem;
+}
+
+.phone__header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .75rem;
+    background: linear-gradient(to right, var(--purple-500), var(--pink-500));
+    padding: 2.5rem 1.2rem .75rem 1.2rem;
+    border-radius: 0 0.5rem 0.5rem;
+    box-shadow: var(--shadow-phone);
+}
+
+.icon-back,
+.icon-menu {
+    color: var(--white);
+}
+
+.profile {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    gap: .625rem;
+}
+
+.profile__img {
+    width: 2.1875rem;
+    border-radius: 100%;
+    border: .125rem solid var(--white);
+}
+
+.profile__info {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.profile__name {
+    font-weight: var(--fw-500);
+    color: var(--white);
+    font-size: var(--fs-app-name);
+    letter-spacing: .0625rem;
+}
+
+.profile__status {
+    color: var(--purple-300);
+    font-size: var(--fs-app-status);
+}
+
+/* Chat */
+.chat {
+    padding: 1rem .75rem;
+}
+
+.chat__list {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+    width: 100%;
+}
+
+.msg {
+    padding: var(--pad-bubble);
+    font-size: var(--fs-app-msg);
+    font-weight: var(--fw-400);
+}
+
+.msg--left {
+    max-width: 10.65rem;
+    display: flex;
+    align-items: start;
+    background-color: var(--bg-bubble);
+    border-radius: var(--radius-bubble) var(--radius-bubble) var(--radius-bubble) var(--radius-tail);
+}
+
+.msg--left p {
+    color: var(--purple-600);
+}
+
+.msg--right {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    align-self: end;
+    box-shadow: var(--shadow-msg);
+    background-color: var(--white);
+    border-radius: var(--radius-bubble) var(--radius-bubble) var(--radius-tail) var(--radius-bubble);
+}
+
+.msg--right p {
+    color: var(--gray-500);
+}
+
+.msg--right p:first-child {
+    max-width: 9.6rem;
+}
+
+.msg--images {
+    padding: 0;
+    background-color: inherit;
+    box-shadow: none;
+    margin-top: .75rem;
+    flex-direction: row;
+    justify-content: end;
+    gap: .75rem;
+}
+
+.msg--images img {
+    width: 3.75rem;
+    height: 3.75rem;
+    border-radius: .75rem;
+    object-fit: cover;
+}
+
+.msg--offer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 14rem;
+    width: 100%;
+    background: linear-gradient(90deg, var(--pink-500), var(--purple-500));
+    padding: var(--pad-bubble) 1.5rem var(--pad-bubble) var(--pad-bubble);
+}
+
+.offer__details {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 1rem;
+}
+
+.offer__radio {
+    border: .0625rem solid var(--pink-400);
+    border-radius: 100%;
+    height: 1.25rem;
+    width: 1.25rem;
+}
+
+.offer__time {
+    color: var(--gray-100);
+    letter-spacing: .0313rem;
+}
+
+.offer__price {
+    font-size: var(--fs-app-price);
+    color: var(--white);
+    letter-spacing: .0625rem;
+    font-weight: var(--fw-700);
+}
+
+/* Input */
+.chat__form {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-block-start: 1rem;
+}
+
+.chat__input {
+    width: 100%;
+    border: none;
+    padding: .75rem .75rem .75rem 1.5rem;
+    border-radius: var(--radius-input);
+    overflow: hidden;
+}
+
+.chat__input:focus {
+    outline: .125rem solid var(--pink-400);
+}
+
+.chat__input::placeholder {
+    color: var(--gray-300);
+    font-size: var(--fs-app-msg);
+}
+
+.chat__submit {
+    position: absolute;
+    right: 0.5rem;
+    background-color: var(--purple-950);
+    border: none;
+    color: var(--white);
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.hero-text {
+    text-align: start;
+    display: flex;
+    gap: var(--gap-hero-text);
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    margin-block-end: 3.125rem;
+}
+
+.hero-text__title {
+    font-size: var(--fs-hero-title);
+    font-weight: var(--fw-500);
+    color: var(--purple-950);
+}
+
+.hero-text__desc {
+    color: var(--gray-500);
+    max-width: 28.125rem;
+    line-height: 1.8;
+}
+
+@media screen and (max-width:48rem) {
+    body::before {
+        width: 12rem;
+        height: 43rem;
+    }
+
+    body::after {
+        width: 12rem;
+        height: 40rem;
+        border-radius: 62.5rem 0 0 0;
+    }
+
+    .container {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .phone {
+        max-width: 18.75rem;
+        border: .75rem solid var(--white);
+    }
+
+    .phone__inner::before {
+        left: 2.8rem;
+    }
+
+    .hero-text {
+        text-align: center;
+        align-items: center;
+    }
+
+    .hero-text__desc {
+        max-width: 19rem;
+    }
+}

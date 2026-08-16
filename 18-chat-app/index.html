@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Mobile App Css</title>
+
+</head>
+
+<body>
+  <main class="container">
+
+    <article class="phone" inert>
+      <div class="phone__inner">
+        <header class="phone__header">
+          <span class="icon-back">&#10094;</span>
+          <div class="profile">
+            <img src="./images/avatar.jpg" alt="Profile" class="profile__img">
+            <div class="profile__info">
+              <h2 class="profile__name">Samuel Green</h2>
+              <span class="profile__status">Available to Walk</span>
+            </div>
+          </div>
+          <span class="icon-menu">&#8942;</span>
+        </header>
+
+        <div class="chat">
+          <ul class="chat__list">
+
+            <li class="msg msg--left">
+              <p>That sounds great. I’d be happy to discuss more.</p>
+            </li>
+
+            <li class="msg msg--left">
+              <p>Could you send over some pictures of your dog, please?</p>
+            </li>
+
+            <li class="msg msg--right msg--images">
+              <img src="./images/dog-image-1.jpg" alt="Dog 1">
+              <img src="./images/dog-image-2.jpg" alt="Dog 2">
+              <img src="./images/dog-image-3.jpg" alt="Dog 3">
+            </li>
+
+            <li class="msg msg--right">
+              <p>Here are a few pictures. She’s a happy girl!</p>
+            </li>
+
+            <li class="msg msg--right msg--short">
+              <p>Can you make it?</p>
+            </li>
+
+            <li class="msg msg--left">
+              <p>She looks so happy! The time we discussed works. How long shall I take her out for?</p>
+            </li>
+
+            <li class="msg msg--left msg--offer">
+              <div class="offer__details">
+                <span class="offer__radio"></span>
+                <span class="offer__time">30 minute walk</span>
+              </div>
+              <strong class="offer__price">$29</strong>
+            </li>
+
+            <li class="msg msg--left msg--offer">
+              <div class="offer__details">
+                <span class="offer__radio"></span>
+                <span class="offer__time">1 hour walk</span>
+              </div>
+              <strong class="offer__price">$49</strong>
+            </li>
+
+          </ul>
+
+          <form class="chat__form" action="#">
+            <input type="text" class="chat__input" placeholder="Type a message…">
+            <button type="button" class="chat__submit" aria-label="Send message">&#10095;</button>
+          </form>
+        </div>
+
+      </div>
+    </article>
+
+    <section class="hero-text">
+      <h1 class="hero-text__title">Simple booking</h1>
+      <p class="hero-text__desc">
+        Stay in touch with our dog walkers through the chat interface. This makes it easy to
+        discuss arrangements and make bookings. Once the walk has been completed you can rate
+        your walker and book again all through the chat.
+      </p>
+    </section>
+
+  </main>
+</body>
+
+</html>
