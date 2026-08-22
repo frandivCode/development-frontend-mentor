@@ -1,0 +1,278 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+
+:root {
+    /* Colors */
+    --gradient-bar: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+
+    /* Neutral */
+    --clr-blue-200: hsl(243, 100%, 93%);
+    --clr-grayish-blue: hsl(229, 7%, 55%);
+    --clr-blue-750: hsl(229, 56%, 18%);
+    --clr-blue-850: hsl(228, 56%, 26%);
+    --clr-blue-950: hsl(229, 55%, 8%);
+    --clr-white: hsl(0, 0%, 100%);
+
+    /* Typography */
+    --ff-raleway: "Raleway", sans-serif;
+    --fs-body: .875rem;
+    --fs-storage: clamp(0.875rem, 0.831rem + 0.19vw, 1rem);
+    --fs-tooltip-num: 2.5rem;
+    --fs-tooltip-text: 0.75rem;
+    --fw-400: 400;
+    --fw-700: 700;
+
+    /* Spacing System */
+    --space-xxs: .1875rem;
+    --space-xs: .4375rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2.5rem;
+
+    /* Layout */
+    --max-width: 56.25rem;
+
+    /* Border Radius */
+    --radius-sm: .625rem;
+    --radius-lg: 6.25rem;
+    --radius-pill: 3.125rem;
+
+    /* Shadows */
+    --shadow-card: 0px 30px 40px -15px rgba(0, 0, 0, 0.25);
+    --shadow-tooltip: 0px 15px 20px -10px rgba(0, 0, 0, 0.15);
+}
+
+body {
+    font-family: var(--ff-raleway);
+    font-size: var(--fs-body);
+    font-weight: var(--fw-400);
+    color: var(--clr-blue-200);
+    background-color: var(--clr-blue-950);
+    background-image: url('./images/bg-mobile.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--space-md);
+}
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    max-width: var(--max-width);
+}
+
+.card {
+    background-color: var(--clr-blue-850);
+    padding: var(--space-lg);
+    box-shadow: var(--shadow-card);
+}
+
+.card--actions {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    border-radius: var(--radius-sm) var(--radius-lg) var(--radius-sm) var(--radius-sm);
+}
+
+.actions__list {
+    margin-block-start: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--space-sm);
+}
+
+.actions__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--clr-blue-950);
+    border: none;
+    padding: var(--space-sm);
+    border-radius: var(--radius-sm);
+}
+
+.actions__btn img {
+    max-width: 1.5rem;
+    max-height: 1.5rem;
+    object-fit: contain;
+    transition: all 0.3s ease-in-out;
+}
+
+.card--storage {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    border-radius: var(--radius-sm);
+    padding-block-end: 3rem;
+}
+
+.storage__text {
+    font-size: var(--fs-storage);
+    text-align: center;
+    font-weight: var(--fw-400);
+    color: var(--clr-blue-200);
+}
+
+.progress {
+    padding: var(--space-xxs);
+    background-color: var(--clr-blue-750);
+    border-radius: var(--radius-pill);
+    position: relative;
+}
+
+.progress__bar {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    border-radius: var(--radius-pill);
+    width: 100%;
+    padding: var(--space-xxs);
+    background: var(--gradient-bar);
+}
+
+.input-progress__bar {
+    width: 100%;
+    opacity: 0;
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    z-index: 1000;
+    cursor: pointer;
+    padding: var(--space-xxs);
+}
+
+.progress__dot {
+    background-color: var(--clr-white);
+    padding: .3125rem;
+    border-radius: var(--radius-pill);
+}
+
+.progress__labels {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.progress__label {
+    font-weight: var(--fw-700);
+    color: var(--clr-blue-200);
+}
+
+.tooltip {
+    right: 5rem;
+    bottom: -3.125rem;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-xs);
+    background-color: var(--clr-white);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-tooltip);
+}
+
+.tooltip__number {
+    font-weight: var(--fw-700);
+    color: var(--clr-blue-950);
+    font-size: var(--fs-tooltip-num);
+}
+
+.tooltip__text {
+    letter-spacing: .0625rem;
+    font-size: var(--fs-tooltip-text);
+    text-transform: uppercase;
+    color: var(--clr-grayish-blue);
+    font-weight: var(--fw-700);
+}
+
+@media (min-width:64rem) {
+    body {
+        background-image: url(./images/bg-desktop.png);
+        background-size: 100% 50vh;
+        background-position: bottom;
+    }
+
+    .dashboard {
+        flex-direction: row;
+        align-items: flex-end;
+        gap: 2rem;
+    }
+
+    .card--actions {
+        flex: 1 1 35%;
+    }
+
+    .actions__btn:hover img {
+        transform: translateY(-5px);
+    }
+
+    .card--storage {
+        flex: 1 1 65%;
+    }
+
+    .storage__text {
+        text-align: start;
+    }
+
+    .tooltip {
+        right: 2.5rem;
+        bottom: 9.5rem;
+    }
+
+    .tooltip::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: -1.375rem;
+        height: 0;
+        width: 0;
+        z-index: 1;
+        overflow: hidden;
+        border-top: 1.875rem solid white;
+        border-left: 1.875rem solid transparent;
+    }
+}
