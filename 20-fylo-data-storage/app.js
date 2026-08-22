@@ -1,7 +1,8 @@
-let textStorage = document.getElementById('used-storage');
-let inputStorage = document.getElementById('input-range');
-let tooltipNumber = document.getElementById('tooltip-number');
-let progressBar = document.getElementById('progress-bar');
+const textStorage = document.getElementById('used-storage');
+const inputStorage = document.getElementById('input-range');
+const tooltipNumber = document.getElementById('tooltip-number');
+const progressBar = document.getElementById('progress-bar');
+
 
 inputStorage.addEventListener('input', () => {
     let valorInput = inputStorage.value;

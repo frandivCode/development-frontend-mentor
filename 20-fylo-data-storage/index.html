@@ -21,7 +21,7 @@
     <section class="card card--actions">
       <img src="./images/logo.svg" alt="Fylo logo" class="card__logo">
 
-      <ul class="actions__list" aria-label="Quick actions">
+      <ul class="actions__list">
         <li class="actions__item">
           <button type="button" class="actions__btn" aria-label="Document">
             <img src="./images/icon-document.svg" alt="" aria-hidden="true">
@@ -44,11 +44,18 @@
       <p class="storage__text">You've used <strong class="storage__bold" id="used-storage">815 GB</strong> of your
         storage</p>
 
-      <div class="progress" role="progressbar" aria-valuenow="815" aria-valuemin="0" aria-valuemax="1000">
-        <input id="input-range" class="input-progress__bar" type="range" min="0" max="1000" value="1000">
-        <div class="progress__bar" id="progress-bar" style="width: 75.5%;">
-          <div class="progress__dot"></div>
+      <div class="progress-wrapper">
+
+        <input id="input-range" class="input-progress__bar" aria-label="Adjust storage" type="range" min="0" max="1000"
+          value="1000">
+
+        <div class="progress" role="progressbar" aria-label="Storage progress" aria-valuenow="815" aria-valuemin="0"
+          aria-valuemax="1000">
+          <div class="progress__bar" id="progress-bar">
+            <div class="progress__dot"></div>
+          </div>
         </div>
+
       </div>
 
       <div class="progress__labels">

@@ -167,7 +167,7 @@ body {
     align-items: center;
     justify-content: end;
     border-radius: var(--radius-pill);
-    width: 100%;
+    width: 75.5%;
     padding: var(--space-xxs);
     background: var(--gradient-bar);
 }
@@ -176,7 +176,7 @@ body {
     width: 100%;
     opacity: 0;
     position: absolute;
-    left: 10px;
+    left: .625rem;
     top: 0;
     bottom: 0;
     z-index: 1000;
@@ -274,5 +274,16 @@ body {
         overflow: hidden;
         border-top: 1.875rem solid white;
         border-left: 1.875rem solid transparent;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .actions__btn img {
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .actions__btn:hover img {
+        transform: none;
+        opacity: 0.7;
     }
 }
