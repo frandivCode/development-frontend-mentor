@@ -13,4 +13,5 @@ inputStorage.addEventListener('input', () => {
 
     const widthProgress = valorInput / 10;
     progressBar.style.width = widthProgress + '%';
+    progressBar.setAttribute('aria-valuenow', valorInput);
 });
